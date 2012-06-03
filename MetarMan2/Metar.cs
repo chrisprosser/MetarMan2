@@ -10,12 +10,21 @@ namespace MetarMan2
 {
     class Metar
     {
+        public Metar()
+        {
+            bad_ = true;
+        }
+
         public Metar(string rawMetar)
         { 
             metar_ = rawMetar;
-        } 
+            bad_ = false;
+        }
 
-        private string metar_;
+        public bool IsBad()
+        {
+            return bad_;
+        }
 
         public string GetRawMetar()
         {
@@ -27,6 +36,10 @@ namespace MetarMan2
             // will be second item after a split in ""
             string[] splitString = metar_.Split(' ');
             return splitString[1];
-        } 
+        }
+
+        private string metar_;
+        private bool bad_;
+    
     }
 }

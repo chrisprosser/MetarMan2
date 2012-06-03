@@ -35,12 +35,29 @@ namespace MetarMan2
         {
             NOAAMetarService service = new NOAAMetarService();
             StackPanel sp = (StackPanel)FindName("MainStack");
-            string[] stations = {"KBFI", "KAWO"};
+            string[] stations = { "KBFI", 
+                                    "KAWO", 
+                                    "KPWT", 
+                                    "PABR", 
+                                    "PACZ",
+                                    "KIWA",
+                                    "KHII",
+                                "KGEU","KBLI","KCLS","KHQM","KRNT","KSHN","KATX","KNOW", "KVUO", "KTIW", "KSFF"};
 
             foreach( string station in stations) {
                 Metar m = service.GetCurrentObs(station);
                 TextBox tb = new TextBox();
-                tb.SetValue(TextBox.TextProperty, m.GetRawMetar());
+                tb.SetValue(TextBox.IsReadOnlyProperty, true);
+                tb.SetValue(TextBox.AcceptsReturnProperty, true);
+                tb.SetValue(TextBox.WidthProperty, Double.NaN);
+                if (m.IsBad())
+                {
+                    tb.SetValue(TextBox.TextProperty, station + " is bad");
+                }
+                else
+                {
+                    tb.SetValue(TextBox.TextProperty, m.GetRawMetar());
+                }
                 sp.Children.Add(tb);
             }
  

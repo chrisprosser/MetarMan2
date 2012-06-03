@@ -32,6 +32,17 @@ namespace UnitTestLibrary1
 
         }
 
+        [TestMethod]
+        public void TestBadMetar()
+        {
+            Metar metar = new Metar();
+
+            Assert.IsTrue(metar.IsBad());
+
+        }
+
+
+
     }
 
     [TestClass]
@@ -56,6 +67,28 @@ namespace UnitTestLibrary1
 
             Assert.AreEqual<string>("KAWO", theMetar.GetStation());
         }
+
+        [TestMethod]
+        public void GoodStationObsTest()
+        {
+            NOAAMetarService noaa = new NOAAMetarService();
+
+            Metar theMetar = noaa.GetCurrentObs("KAWO");
+
+            Assert.IsTrue(!theMetar.IsBad());
+        }
+
+
+        [TestMethod]
+        public void BadStationObsTest()
+        {
+            NOAAMetarService noaa = new NOAAMetarService();
+
+            Metar theMetar = noaa.GetCurrentObs("XXXX");
+
+            Assert.IsTrue( theMetar.IsBad());
+        }
+
         [TestMethod]
         public void ParseLineTest()
         {

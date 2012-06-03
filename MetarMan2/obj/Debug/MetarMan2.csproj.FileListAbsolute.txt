@@ -15,10 +15,6 @@ C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\MainPage.xaml
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\MetarMan2.exe
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\MetarMan2.pdb
-C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\priconfig.xml.intermediate
-C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\layout.resfiles.intermediate
-C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\resources.resfiles.intermediate
-C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\pri.resfiles.intermediate
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\priconfig.xml
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\layout.resfiles
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\resources.resfiles

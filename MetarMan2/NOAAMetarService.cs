@@ -37,34 +37,40 @@ namespace MetarMan2
 
         public Metar GetCurrentObs(string icao)
         {
-            HttpClient httpClient = new HttpClient();
+            try
+            {
+                HttpClient httpClient = new HttpClient();
 
-            // Add a user agent header in case the 
-            // requested URI contains a query.
+                // Add a user agent header in case the 
+                // requested URI contains a query.
 
-            //client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
-            httpClient.MaxResponseContentBufferSize = 256000;
-            httpClient.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
-             /*
-            // use the XML stuff. I all really care about is the uri for the raw metar.
-            Task<string> response = httpClient.GetStringAsync("http://www.weather.gov/xml/current_obs/KBFI.xml");
+                //client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
+                httpClient.MaxResponseContentBufferSize = 256000;
+                httpClient.DefaultRequestHeaders.Add("user-agent", "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)");
+                /*
+               // use the XML stuff. I all really care about is the uri for the raw metar.
+               Task<string> response = httpClient.GetStringAsync("http://www.weather.gov/xml/current_obs/KBFI.xml");
 
-            string s = response.Result;
-            XmlReader   xmlReader = new XmlReader()
+               string s = response.Result;
+               XmlReader   xmlReader = new XmlReader()
 
 
-            Debug.WriteLine(s);
-            */
+               Debug.WriteLine(s);
+               */
 
-            string requestURI = "http://www.weather.gov/data/METAR/" + icao + ".1.txt";
+                string requestURI = "http://www.weather.gov/data/METAR/" + icao + ".1.txt";
 
-            Task<string> response = httpClient.GetStringAsync(requestURI);
+                Task<string> response = httpClient.GetStringAsync(requestURI);
 
-            string s = response.Result;
-            Debug.WriteLine(s);
-                        
-            return new Metar(ParseResultForMetarLine(s));
-            
+                string s = response.Result;
+                Debug.WriteLine(s);
+
+                return new Metar(ParseResultForMetarLine(s));
+            }
+            catch (Exception e)
+            {
+                return new Metar();
+            }
         }
     }
 }
