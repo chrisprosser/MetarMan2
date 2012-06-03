@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Threading.Tasks;
+
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -45,20 +47,27 @@ namespace MetarMan2
                                 "KGEU","KBLI","KCLS","KHQM","KRNT","KSHN","KATX","KNOW", "KVUO", "KTIW", "KSFF"};
 
             foreach( string station in stations) {
-                Metar m = service.GetCurrentObs(station);
+
                 TextBox tb = new TextBox();
                 tb.SetValue(TextBox.IsReadOnlyProperty, true);
                 tb.SetValue(TextBox.AcceptsReturnProperty, true);
                 tb.SetValue(TextBox.WidthProperty, Double.NaN);
-                if (m.IsBad())
+                tb.SetValue(TextBox.TextProperty, station + " Loading...");
+
+                sp.Children.Add(tb);
+
+                Task<Metar> m = service.GetCurrentObsAsync(station);
+
+                m.Wait();
+
+                if (m.Result.IsBad())
                 {
                     tb.SetValue(TextBox.TextProperty, station + " is bad");
                 }
                 else
                 {
-                    tb.SetValue(TextBox.TextProperty, m.GetRawMetar());
+                    tb.SetValue(TextBox.TextProperty, m.Result.GetRawMetar());
                 }
-                sp.Children.Add(tb);
             }
  
 

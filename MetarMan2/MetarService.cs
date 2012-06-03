@@ -8,6 +8,6 @@ namespace MetarMan2
 {
     interface MetarService
     {
-        Metar GetCurrentObs(string icao);
+        Task<Metar> GetCurrentObsAsync(string icao);
     }
 }

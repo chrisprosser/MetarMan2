@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+using System.Threading.Tasks;
 
 using MetarMan2;
 
@@ -53,9 +54,9 @@ namespace UnitTestLibrary1
         {
             NOAAMetarService  noaa = new NOAAMetarService();
 
-            Metar theMetar = noaa.GetCurrentObs("KBFI");
+            Task<Metar> theMetar = noaa.GetCurrentObsAsync("KBFI");
 
-            Assert.AreEqual<string>("KBFI", theMetar.GetStation() );
+            Assert.AreEqual<string>("KBFI", theMetar.Result.GetStation() );
         }
 
         [TestMethod]
@@ -63,9 +64,9 @@ namespace UnitTestLibrary1
         {
             NOAAMetarService noaa = new NOAAMetarService();
 
-            Metar theMetar = noaa.GetCurrentObs("KAWO");
+            Task<Metar> theMetar = noaa.GetCurrentObsAsync("KAWO");
 
-            Assert.AreEqual<string>("KAWO", theMetar.GetStation());
+            Assert.AreEqual<string>("KAWO", theMetar.Result.GetStation());
         }
 
         [TestMethod]
@@ -73,9 +74,9 @@ namespace UnitTestLibrary1
         {
             NOAAMetarService noaa = new NOAAMetarService();
 
-            Metar theMetar = noaa.GetCurrentObs("KAWO");
+            Task<Metar> theMetar = noaa.GetCurrentObsAsync("KAWO");
 
-            Assert.IsTrue(!theMetar.IsBad());
+            Assert.IsTrue(!theMetar.Result.IsBad());
         }
 
 
@@ -84,9 +85,9 @@ namespace UnitTestLibrary1
         {
             NOAAMetarService noaa = new NOAAMetarService();
 
-            Metar theMetar = noaa.GetCurrentObs("XXXX");
+            Task<Metar> theMetar = noaa.GetCurrentObsAsync("XXXX");
 
-            Assert.IsTrue( theMetar.IsBad());
+            Assert.IsTrue( theMetar.Result.IsBad());
         }
 
         [TestMethod]

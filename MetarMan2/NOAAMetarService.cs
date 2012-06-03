@@ -35,7 +35,7 @@ namespace MetarMan2
             return rawQueryResult.Substring(index);
         }
 
-        public Metar GetCurrentObs(string icao)
+        public async Task<Metar> GetCurrentObsAsync(string icao)
         {
             try
             {
@@ -60,14 +60,11 @@ namespace MetarMan2
 
                 string requestURI = "http://www.weather.gov/data/METAR/" + icao + ".1.txt";
 
-                Task<string> response = httpClient.GetStringAsync(requestURI);
+                string response = await httpClient.GetStringAsync(requestURI);
 
-                string s = response.Result;
-                Debug.WriteLine(s);
-
-                return new Metar(ParseResultForMetarLine(s));
+                return new Metar(ParseResultForMetarLine(response));
             }
-            catch (Exception e)
+            catch (Exception )
             {
                 return new Metar();
             }
