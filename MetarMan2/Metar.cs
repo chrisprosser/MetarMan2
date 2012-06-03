@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.RegularExpressions;
 
 //"METAR KBFI 021953Z 19009KT 10SM SCT047 SCT060 OVC075 17/09 A2992 RMK AO2 SLP133 T01670089";
 namespace MetarMan2
@@ -26,9 +26,15 @@ namespace MetarMan2
             return bad_;
         }
 
+        public static string StripString(string inputStr)
+        {
+        // Replace invalid characters with empty strings.
+            return Regex.Replace(inputStr, @"[^\w\/ \.@-]", ""); 
+        }
+
         public string GetRawMetar()
         {
-            return metar_;
+            return StripString(metar_);
         }
 
         public string GetStation()

@@ -42,7 +42,14 @@ namespace UnitTestLibrary1
 
         }
 
+        [TestMethod]
+        public void TestStrip()
+        {
+            string stripped = Metar.StripString("METAR KBFI 021953Z 19009KT 10SM SCT047 SCT060 OVC075 17/09 A2992 RMK AO2 SLP133 T01670089\r\n\t");
 
+            Assert.AreEqual<string>("METAR KBFI 021953Z 19009KT 10SM SCT047 SCT060 OVC075 17/09 A2992 RMK AO2 SLP133 T01670089", stripped);
+
+        }
 
     }
 
@@ -57,6 +64,18 @@ namespace UnitTestLibrary1
             Task<Metar> theMetar = noaa.GetCurrentObsAsync("KBFI");
 
             Assert.AreEqual<string>("KBFI", theMetar.Result.GetStation() );
+        }
+
+        [TestMethod]
+        public void ConformOnlyAlpha()
+        {
+            NOAAMetarService noaa = new NOAAMetarService();
+
+            Task<Metar> theMetar = noaa.GetCurrentObsAsync("KBFI");
+
+            string rawMetar = theMetar.Result.GetRawMetar();
+            //rawMetar.
+            Assert.AreEqual<string>("KBFI", theMetar.Result.GetStation());
         }
 
         [TestMethod]

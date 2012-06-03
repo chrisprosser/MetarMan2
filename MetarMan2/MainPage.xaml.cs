@@ -37,7 +37,7 @@ namespace MetarMan2
         {
             NOAAMetarService service = new NOAAMetarService();
             StackPanel sp = (StackPanel)FindName("MainStack");
-            string[] stations = { "KBFI", 
+            string[] stationsArr = { "KBFI", 
                                     "KAWO", 
                                     "KPWT", 
                                     "PABR", 
@@ -46,19 +46,41 @@ namespace MetarMan2
                                     "KHII",
                                 "KGEU","KBLI","KCLS","KHQM","KRNT","KSHN","KATX","KNOW", "KVUO", "KTIW", "KSFF"};
 
-            foreach( string station in stations) {
+            foreach (string station in stationsArr)
+            {
 
                 TextBox tb = new TextBox();
+                tb.SetValue(TextBox.IsReadOnlyProperty, true);
+                tb.SetValue(TextBox.AcceptsReturnProperty, true);
+                tb.SetValue(TextBox.WidthProperty, 2000);
+                tb.SetValue(TextBox.NameProperty, station);
+                tb.SetValue(TextBox.TextProperty, station + " Loading...");
+                sp.Children.Add(tb);
+            }
+
+
+
+            List<string> stations = new List<string>(stationsArr);
+
+            // Create a query.
+            IEnumerable<Task<int>> downloadTasksQuery =
+                from station in stations select ProcessStation(station);
+
+            // Use ToArray to execute the query and start the download tasks.
+            Task<int>[] downloadTasks = downloadTasksQuery.ToArray();
+
+ 
+            /*
+            foreach( string station in stations) {
+
                 tb.SetValue(TextBox.IsReadOnlyProperty, true);
                 tb.SetValue(TextBox.AcceptsReturnProperty, true);
                 tb.SetValue(TextBox.WidthProperty, Double.NaN);
                 tb.SetValue(TextBox.TextProperty, station + " Loading...");
 
-                sp.Children.Add(tb);
-
                 Task<Metar> m = service.GetCurrentObsAsync(station);
 
-                m.Wait();
+                //m.Wait();
 
                 if (m.Result.IsBad())
                 {
@@ -68,8 +90,32 @@ namespace MetarMan2
                 {
                     tb.SetValue(TextBox.TextProperty, m.Result.GetRawMetar());
                 }
+            
             }
- 
+             * */
+        }
+
+        async Task<int> ProcessStation(string station)
+        {
+            NOAAMetarService service = new NOAAMetarService();
+            StackPanel sp = (StackPanel)FindName("MainStack");
+            TextBox tb = (TextBox) sp.FindName(station);
+
+
+            Metar m = await service.GetCurrentObsAsync(station);
+
+            //m.Wait();
+
+            if (m.IsBad())
+            {
+                tb.SetValue(TextBox.TextProperty, station + " is bad");
+            }
+            else
+            {
+                tb.SetValue(TextBox.TextProperty, m.GetRawMetar());
+            }
+
+            return 0; // can't figure out Task<void> for now
 
         }
     }
