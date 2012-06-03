@@ -110,7 +110,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Metar.cs" />
+    <Compile Include="MetarService.cs" />
     <Compile Include="MetarTest.cs" />
+    <Compile Include="NOAAMetarService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

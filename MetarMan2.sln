@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetarMan2", "MetarMan2\MetarMan2.csproj", "{AA328D31-6665-439C-864C-D6164390F1AC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestLibrary1", "UnitTestLibrary1\UnitTestLibrary1.csproj", "{7354590E-E010-48FF-A4DD-22C570927357}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AA328D31-6665-439C-864C-D6164390F1AC} = {AA328D31-6665-439C-864C-D6164390F1AC}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

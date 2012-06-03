@@ -9,6 +9,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    	<StackPanel x:Name="MainStack" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top">
+    		<TextBox x:Name="KBFI_TextBox" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" IsReadOnly="True"/>
+    	</StackPanel>
 
     </Grid>
 </Page>

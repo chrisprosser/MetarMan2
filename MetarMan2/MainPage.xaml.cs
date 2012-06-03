@@ -33,6 +33,10 @@ namespace MetarMan2
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            NOAAMetarService service = new NOAAMetarService();
+            Metar m = service.GetCurrentObs("KBFI");
+            TextBox tb = (TextBox) FindName("KBFI_TextBox");
+            tb.SetValue(TextBox.TextProperty, m.GetRawMetar());
         }
     }
 }

@@ -109,7 +109,12 @@
     <SDKReference Include="TestPlatform, Version=11.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\Metar.cs" />
+    <Compile Include="..\MetarMan2\Metar.cs">
+      <Link>Metar.cs</Link>
+    </Compile>
+    <Compile Include="..\MetarMan2\NOAAMetarService.cs">
+      <Link>NOAAMetarService.cs</Link>
+    </Compile>
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -132,6 +137,7 @@
     <Content Include="Images\UnitTestStoreLogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="MetarMan2.exe" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
