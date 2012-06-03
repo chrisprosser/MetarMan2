@@ -22,7 +22,7 @@ namespace UnitTestLibrary1
         }
 
         [TestMethod]
-        public void GetStationTest()
+        public void GetKBFIStationTest()
         {
             string testRawMetar = "METAR KBFI 021953Z 19009KT 10SM SCT047 SCT060 OVC075 17/09 A2992 RMK AO2 SLP133 T01670089";
 
@@ -31,13 +31,14 @@ namespace UnitTestLibrary1
             Assert.AreEqual<string>("KBFI", metar.GetStation());
 
         }
+
     }
 
     [TestClass]
     public class NOAAServiceTest
     {
         [TestMethod]
-        public void CurrentObsTest()
+        public void CurrentKBFIObsTest()
         {
             NOAAMetarService  noaa = new NOAAMetarService();
 
@@ -46,6 +47,15 @@ namespace UnitTestLibrary1
             Assert.AreEqual<string>("KBFI", theMetar.GetStation() );
         }
 
+        [TestMethod]
+        public void CurrentKAWOObsTest()
+        {
+            NOAAMetarService noaa = new NOAAMetarService();
+
+            Metar theMetar = noaa.GetCurrentObs("KAWO");
+
+            Assert.AreEqual<string>("KAWO", theMetar.GetStation());
+        }
         [TestMethod]
         public void ParseLineTest()
         {

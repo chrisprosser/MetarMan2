@@ -1,4 +1,5 @@
 MetarMan2/bin/
+*.exe
 MetarMan2/obj/
 TestResults/
 UnitTestLibrary1/bin/

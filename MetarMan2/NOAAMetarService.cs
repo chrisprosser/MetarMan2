@@ -55,8 +55,10 @@ namespace MetarMan2
 
             Debug.WriteLine(s);
             */
-   
-            Task<string> response = httpClient.GetStringAsync("http://www.weather.gov/data/METAR/KBFI.1.txt");
+
+            string requestURI = "http://www.weather.gov/data/METAR/" + icao + ".1.txt";
+
+            Task<string> response = httpClient.GetStringAsync(requestURI);
 
             string s = response.Result;
             Debug.WriteLine(s);

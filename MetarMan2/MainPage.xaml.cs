@@ -34,9 +34,17 @@ namespace MetarMan2
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             NOAAMetarService service = new NOAAMetarService();
-            Metar m = service.GetCurrentObs("KBFI");
-            TextBox tb = (TextBox) FindName("KBFI_TextBox");
-            tb.SetValue(TextBox.TextProperty, m.GetRawMetar());
+            StackPanel sp = (StackPanel)FindName("MainStack");
+            string[] stations = {"KBFI", "KAWO"};
+
+            foreach( string station in stations) {
+                Metar m = service.GetCurrentObs(station);
+                TextBox tb = new TextBox();
+                tb.SetValue(TextBox.TextProperty, m.GetRawMetar());
+                sp.Children.Add(tb);
+            }
+ 
+
         }
     }
 }
