@@ -35,6 +35,11 @@ namespace MetarMan2
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            TextBlock currentTime = (TextBlock) FindName("CurrentDateTime");
+            DateTime dt = DateTime.UtcNow;
+            string value = "UTC Now: " + dt.ToString("ddHHmm") + "Z";
+            currentTime.SetValue(TextBlock.TextProperty, value);
+            
             NOAAMetarService service = new NOAAMetarService();
             StackPanel sp = (StackPanel)FindName("MainStack");
             string[] stationsArr = { "KBFI", 
