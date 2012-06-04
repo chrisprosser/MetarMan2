@@ -1,0 +1,20 @@
+﻿<UserControl
+    x:Class="MetarMan2.MetarControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MetarMan2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="64" Width="697">
+    
+    <Grid>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="197*"/>
+    		<ColumnDefinition Width="3*"/>
+    	</Grid.ColumnDefinitions>
+
+    	<TextBlock x:Name="Metar" HorizontalAlignment="Left" Margin="127,0,0,10" TextWrapping="Wrap" Text="METAR KBFI 021953Z 19009KT 10SM SCT047 SCT060 OVC075 17/09 A2992 RMK AO2 SLP133 " Foreground="#FDAAA9A9" FontSize="16" Width="560" VerticalAlignment="Bottom" Visibility="Collapsed"/>
+    	<TextBlock x:Name="StationName" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="64" FontSize="58.667" Foreground="#79099548" Text="KBFI"/>
+
+    </Grid>
+</UserControl>

@@ -41,6 +41,9 @@
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\bin\Debug\MainPage.xaml">
       <PackagePath>MainPage.xaml</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\bin\Debug\MetarControl.xaml">
+      <PackagePath>MetarControl.xaml</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
     </AppxPackagedFile>

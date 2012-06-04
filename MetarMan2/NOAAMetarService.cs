@@ -66,7 +66,9 @@ namespace MetarMan2
             }
             catch (Exception )
             {
-                return new Metar();
+                Metar metar = new Metar();
+                metar.SetBadStation(icao);
+                return metar;
             }
         }
     }

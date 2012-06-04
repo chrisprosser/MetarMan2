@@ -21,3 +21,10 @@ C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\pri.resfiles
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\LanguageQualifiers.txt
 C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\ProjectArchitectures.txt
+C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\MetarControl.g.i.cs
+C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\MetarControl.g.cs
+C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\MetarControl.xaml
+C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\priconfig.xml.intermediate
+C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\layout.resfiles.intermediate
+C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\resources.resfiles.intermediate
+C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\obj\Debug\pri.resfiles.intermediate

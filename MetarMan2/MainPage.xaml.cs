@@ -44,17 +44,13 @@ namespace MetarMan2
                                     "PACZ",
                                     "KIWA",
                                     "KHII",
-                                "KGEU","KBLI","KCLS","KHQM","KRNT","KSHN","KATX","KNOW", "KVUO", "KTIW", "KSFF"};
+                                    "KGEU","KBLI","KCLS","KHQM","KRNT","KSHN","KATX","KNOW", "KVUO", "KTIW", "KSFF"};
 
             foreach (string station in stationsArr)
             {
 
-                TextBox tb = new TextBox();
-                tb.SetValue(TextBox.IsReadOnlyProperty, true);
-                tb.SetValue(TextBox.AcceptsReturnProperty, true);
-                tb.SetValue(TextBox.WidthProperty, 2000);
+                MetarControl tb = new MetarControl();
                 tb.SetValue(TextBox.NameProperty, station);
-                tb.SetValue(TextBox.TextProperty, station + " Loading...");
                 sp.Children.Add(tb);
             }
 
@@ -99,21 +95,14 @@ namespace MetarMan2
         {
             NOAAMetarService service = new NOAAMetarService();
             StackPanel sp = (StackPanel)FindName("MainStack");
-            TextBox tb = (TextBox) sp.FindName(station);
+            MetarControl tb = (MetarControl)sp.FindName(station);
 
 
             Metar m = await service.GetCurrentObsAsync(station);
 
             //m.Wait();
+            tb.SetMetar(m);
 
-            if (m.IsBad())
-            {
-                tb.SetValue(TextBox.TextProperty, station + " is bad");
-            }
-            else
-            {
-                tb.SetValue(TextBox.TextProperty, m.GetRawMetar());
-            }
 
             return 0; // can't figure out Task<void> for now
 
