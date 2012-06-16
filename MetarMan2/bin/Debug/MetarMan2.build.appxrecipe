@@ -23,6 +23,9 @@
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\Assets\Refresh.png">
+      <PackagePath>Assets\Refresh.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\Assets\SmallLogo.png">
       <PackagePath>Assets\SmallLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>

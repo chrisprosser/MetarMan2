@@ -26,6 +26,11 @@ namespace MetarMan2
         public MainPage()
         {
             this.InitializeComponent();
+
+            var settingspane = Windows.UI.ApplicationSettings.SettingsPane.GetForCurrentView();
+
+            //settingspane.CommandsRequested += settingspane_CommandsRequested;
+
         }
 
         /// <summary>
@@ -35,13 +40,17 @@ namespace MetarMan2
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+
+            Windows.UI.ApplicationSettings.SettingsPane.Show();
+            /*
             TextBlock currentTime = (TextBlock) FindName("CurrentDateTime");
             DateTime dt = DateTime.UtcNow;
             string value = "UTC Now: " + dt.ToString("ddHHmm") + "Z";
             currentTime.SetValue(TextBlock.TextProperty, value);
-            
+            */
             NOAAMetarService service = new NOAAMetarService();
-            StackPanel sp = (StackPanel)FindName("MainStack");
+            //StackPanel sp = (StackPanel)FindName("MainStack");
+            GridView sp = (GridView)FindName("MainGrid");
             string[] stationsArr = { "KBFI", 
                                     "KAWO", 
                                     "KPWT", 
@@ -56,7 +65,7 @@ namespace MetarMan2
 
                 MetarControl tb = new MetarControl();
                 tb.SetValue(TextBox.NameProperty, station);
-                sp.Children.Add(tb);
+                sp.Items.Add(tb);
             }
 
 
@@ -99,7 +108,7 @@ namespace MetarMan2
         async Task<int> ProcessStation(string station)
         {
             NOAAMetarService service = new NOAAMetarService();
-            StackPanel sp = (StackPanel)FindName("MainStack");
+            GridView sp = (GridView)FindName("MainGrid");
             MetarControl tb = (MetarControl)sp.FindName(station);
 
 

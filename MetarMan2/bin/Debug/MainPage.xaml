@@ -8,14 +8,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 	<Page.BottomAppBar>
-		<AppBar/>
+		<AppBar>
+			<StackPanel HorizontalAlignment="Left" Height="84" VerticalAlignment="Top" Width="1346" Orientation="Horizontal">
+				<Button Content="" VerticalAlignment="Center" Width="48" Height="48" HorizontalAlignment="Center">
+					<Button.Background>
+						<ImageBrush ImageSource="Assets/Refresh.png" Stretch="None"/>
+					</Button.Background>
+				</Button>
+			</StackPanel>
+		</AppBar>
 	</Page.BottomAppBar>
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-    	<StackPanel x:Name="MainStack" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="Auto">
-    		<TextBlock x:Name="CurrentDateTime" HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="40" Width="477" FontSize="32" Margin="10,8,1,0" Foreground="#FF9E9E9E"/>
-    	</StackPanel>
-
+    	<GridView x:Name="MainGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto"/>
     </Grid>
 </Page>
 

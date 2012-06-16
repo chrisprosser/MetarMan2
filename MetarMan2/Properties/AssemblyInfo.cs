@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MetarMan2")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Metarma")]
+[assembly: AssemblyDescription("Catch up on the pesky METAR's prior to your flight.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MetarMan2")]
+[assembly: AssemblyCompany("nart.org")]
+[assembly: AssemblyProduct("Metarma")]
 [assembly: AssemblyCopyright("Copyright ©  2012")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

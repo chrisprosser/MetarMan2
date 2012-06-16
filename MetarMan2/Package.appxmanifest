@@ -1,39 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-
-  <Identity Name="07d81088-8744-4945-8079-49f0f8b2df1d"
-            Publisher="CN=cpros_000"
-            Version="1.0.0.0" />
-
+  <Identity Name="07d81088-8744-4945-8079-49f0f8b2df1d" Publisher="CN=cpros_000" Version="1.0.0.0" />
   <Properties>
     <DisplayName>MetarMan2</DisplayName>
-    <PublisherDisplayName>cpros_000</PublisherDisplayName>
+    <PublisherDisplayName>Christopher Prosser at nart.org</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
-
   <Prerequisites>
     <OSMinVersion>6.2.0</OSMinVersion>
     <OSMaxVersionTested>6.2.0</OSMaxVersionTested>
   </Prerequisites>
-
   <Resources>
-    <Resource Language="x-generate"/>
+    <Resource Language="x-generate" />
   </Resources>
-
   <Applications>
-    <Application Id="App"
-        Executable="$targetnametoken$.exe"
-        EntryPoint="MetarMan2.App">
-        <VisualElements
-            DisplayName="MetarMan2"
-            Logo="Assets\Logo.png"
-            SmallLogo="Assets\SmallLogo.png"
-            Description="MetarMan2"
-            ForegroundText="light"
-            BackgroundColor="#464646">
-            <DefaultTile ShowName="allLogos" />
-            <SplashScreen Image="Assets\SplashScreen.png" />
-        </VisualElements>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MetarMan2.App">
+      <VisualElements DisplayName="Metarma" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Read up those pesky METARs before your flight." ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" />
+        <SplashScreen Image="Assets\SplashScreen.png" />
+      </VisualElements>
     </Application>
   </Applications>
   <Capabilities>
