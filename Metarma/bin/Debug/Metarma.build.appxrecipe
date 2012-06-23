@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>HARPY-8</Machine>
+    <WindowsUser>cpros_000</WindowsUser>
+    <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
+    <PackageArchitecture>neutral</PackageArchitecture>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\Metarma.exe">
+      <PackagePath>Metarma.exe</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\Metarma.pdb">
+      <PackagePath>Metarma.pdb</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\Add.png">
+      <PackagePath>Assets\Add.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\Logo.png">
+      <PackagePath>Assets\Logo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\Refresh.png">
+      <PackagePath>Assets\Refresh.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\SmallLogo.png">
+      <PackagePath>Assets\SmallLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\SplashScreen.png">
+      <PackagePath>Assets\SplashScreen.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\StoreLogo.png">
+      <PackagePath>Assets\StoreLogo.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\AddStation.xaml">
+      <PackagePath>AddStation.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\Common\StandardStyles.xaml">
+      <PackagePath>Common\StandardStyles.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\MainPage.xaml">
+      <PackagePath>MainPage.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\MetarControl.xaml">
+      <PackagePath>MetarControl.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\App.xaml">
+      <PackagePath>App.xaml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+</Project>
