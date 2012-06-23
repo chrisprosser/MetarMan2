@@ -10,9 +10,9 @@
 	<Page.BottomAppBar>
 		<AppBar>
 			<StackPanel HorizontalAlignment="Left" Height="84" VerticalAlignment="Top" Width="1346" Orientation="Horizontal">
-				<Button Content="" VerticalAlignment="Center" Width="48" Height="48" HorizontalAlignment="Center">
+				<Button x:ConnectionId='1' x:Name="AddButton" Content="" VerticalAlignment="Center" Width="50" Height="50" HorizontalAlignment="Center" BorderThickness="0"                        >
 					<Button.Background>
-						<ImageBrush ImageSource="Assets/Refresh.png" Stretch="None"/>
+						<ImageBrush ImageSource="Assets/Add.png" Stretch="None"/>
 					</Button.Background>
 				</Button>
 			</StackPanel>

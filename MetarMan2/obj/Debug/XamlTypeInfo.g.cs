@@ -116,9 +116,13 @@ namespace MetarMan2.MetarMan2_XamlTypeInfo
             }
         }
 
-        private object Activate_0_MainPage() { return new MetarMan2.MainPage(); }
+        private object Activate_0_LayoutAwarePage() { return new MetarMan2.Common.LayoutAwarePage(); }
 
-        private object Activate_1_MetarControl() { return new MetarMan2.MetarControl(); }
+        private object Activate_1_AddStation() { return new MetarMan2.AddStation(); }
+
+        private object Activate_2_MainPage() { return new MetarMan2.MainPage(); }
+
+        private object Activate_3_MetarControl() { return new MetarMan2.MetarControl(); }
 
 
         private IXamlType CreateXamlType(string typeName)
@@ -136,15 +140,27 @@ namespace MetarMan2.MetarMan2_XamlTypeInfo
                 xamlType = new XamlSystemBaseType(typeName, typeof(Windows.UI.Xaml.Controls.UserControl));
                 break;
 
+            case "MetarMan2.Common.LayoutAwarePage":
+                userType = new XamlUserType(this, typeName, typeof(MetarMan2.Common.LayoutAwarePage), GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_0_LayoutAwarePage;
+                xamlType = userType;
+                break;
+
+            case "MetarMan2.AddStation":
+                userType = new XamlUserType(this, typeName, typeof(MetarMan2.AddStation), GetXamlTypeByName("MetarMan2.Common.LayoutAwarePage"));
+                userType.Activator = Activate_1_AddStation;
+                xamlType = userType;
+                break;
+
             case "MetarMan2.MainPage":
                 userType = new XamlUserType(this, typeName, typeof(MetarMan2.MainPage), GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+                userType.Activator = Activate_2_MainPage;
                 xamlType = userType;
                 break;
 
             case "MetarMan2.MetarControl":
                 userType = new XamlUserType(this, typeName, typeof(MetarMan2.MetarControl), GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_1_MetarControl;
+                userType.Activator = Activate_3_MetarControl;
                 xamlType = userType;
                 break;
 

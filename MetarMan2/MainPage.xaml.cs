@@ -23,8 +23,24 @@ namespace MetarMan2
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+ 
+
+        void InitHandlers()
+        {
+            //Windows.Storage.ApplicationData.Current.DataChanged +=
+              // new TypedEventHandler<Windows.Storage.ApplicationData, MainPage>(DataChangeHandler);
+        }
+
+        void DataChangeHandler(Windows.Storage.ApplicationData appData, object o)
+        {
+            // TODO: Refresh your data
+        }
+
+
         public MainPage()
         {
+            this.InitHandlers();
             this.InitializeComponent();
 
             var settingspane = Windows.UI.ApplicationSettings.SettingsPane.GetForCurrentView();
@@ -41,7 +57,7 @@ namespace MetarMan2
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
-            Windows.UI.ApplicationSettings.SettingsPane.Show();
+            //Windows.UI.ApplicationSettings.SettingsPane.Show();
             /*
             TextBlock currentTime = (TextBlock) FindName("CurrentDateTime");
             DateTime dt = DateTime.UtcNow;
@@ -51,14 +67,7 @@ namespace MetarMan2
             NOAAMetarService service = new NOAAMetarService();
             //StackPanel sp = (StackPanel)FindName("MainStack");
             GridView sp = (GridView)FindName("MainGrid");
-            string[] stationsArr = { "KBFI", 
-                                    "KAWO", 
-                                    "KPWT", 
-                                    "PABR", 
-                                    "PACZ",
-                                    "KIWA",
-                                    "KHII",
-                                    "KGEU","KBLI","KCLS","KHQM","KRNT","KSHN","KATX","KNOW", "KVUO", "KTIW", "KSFF"};
+            List<string> stationsArr = Preferences.GetStationsList();
 
             foreach (string station in stationsArr)
             {
@@ -121,5 +130,12 @@ namespace MetarMan2
             return 0; // can't figure out Task<void> for now
 
         }
+
+        private void AddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AddStation));
+        	// TODO: Add event handler implementation here.
+        	// put up a dialog? to ask for the 4 character code.
+		}
     }
 }

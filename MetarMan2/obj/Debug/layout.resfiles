@@ -1,8 +1,10 @@
+Assets\Add.png
 Assets\Logo.png
 Assets\Refresh.png
 Assets\SmallLogo.png
 Assets\SplashScreen.png
 Assets\StoreLogo.png
+AddStation.xaml
 App.xaml
 Common\StandardStyles.xaml
 MainPage.xaml

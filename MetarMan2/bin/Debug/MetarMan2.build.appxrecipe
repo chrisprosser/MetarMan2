@@ -19,6 +19,9 @@
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\bin\Debug\MetarMan2.pdb">
       <PackagePath>MetarMan2.pdb</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\Assets\Add.png">
+      <PackagePath>Assets\Add.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
@@ -37,6 +40,9 @@
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\bin\Debug\AddStation.xaml">
+      <PackagePath>AddStation.xaml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\MetarMan2\MetarMan2\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
