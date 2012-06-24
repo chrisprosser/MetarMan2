@@ -142,5 +142,48 @@ namespace UnitTestLibrary1
 
 
         }
+
+    }
+
+    [TestClass]
+    public class PreferencesTest
+    {
+        [TestMethod]
+        public void AddStationToPrefs()
+        {
+            Preferences prefs = new Preferences();
+            prefs.AddStation("KBFI");
+
+            List<string> stations = prefs.GetStationsList();
+
+            Assert.AreEqual(1, stations.Count());
+            Assert.AreEqual<string>("KBFI", stations[0]);
+        }
+
+        [TestMethod]
+        public void SerializeToPrefs()
+        {
+            Preferences prefs = new Preferences();
+            prefs.AddStation("KBFI");
+
+            string serialized = prefs.SaveToString();
+
+            string baked = "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<PreferencesData xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <stationsArr_>\r\n    <string>KBFI</string>\r\n  </stationsArr_>\r\n</PreferencesData>";
+
+            Assert.AreEqual<string>(baked, serialized);
+        }
+
+        [TestMethod]
+        public void SerializeFromPrefs()
+        {
+            string baked = "<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<PreferencesData xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <stationsArr_>\r\n    <string>KBFI</string>\r\n  </stationsArr_>\r\n</PreferencesData>";
+
+            Preferences prefs = new Preferences(baked);
+
+            Assert.AreEqual(1, prefs.GetStationsList().Count());
+            Assert.AreEqual<string>("KBFI", prefs.GetStationsList()[0]);
+        }
+
+    
     }
 }

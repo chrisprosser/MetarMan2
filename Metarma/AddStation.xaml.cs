@@ -52,7 +52,8 @@ namespace MetarMan2
         private void OnAddStationButton(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             TextBox tb = (TextBox)this.FindName("StationIDText");
-            Preferences.AddStation( (string)tb.GetValue(TextBox.TextProperty));
+            Preferences.Instance.AddStation( (string)tb.GetValue(TextBox.TextProperty));
+            Preferences.Instance.SaveToRegistry();
         	// TODO: Add event handler implementation here.
         }
     }

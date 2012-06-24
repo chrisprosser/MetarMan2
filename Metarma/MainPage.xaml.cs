@@ -67,7 +67,9 @@ namespace MetarMan2
             NOAAMetarService service = new NOAAMetarService();
             //StackPanel sp = (StackPanel)FindName("MainStack");
             GridView sp = (GridView)FindName("MainGrid");
-            List<string> stationsArr = Preferences.GetStationsList();
+            Preferences.Instance.LoadFromRegistry();
+
+            List<string> stationsArr = Preferences.Instance.GetStationsList();
 
             foreach (string station in stationsArr)
             {

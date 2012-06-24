@@ -3,25 +3,90 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace MetarMan2
 {
-    class Preferences
+    public sealed class PreferencesData
     {
-        public static List<string> GetStationsList()
+        // preferences so far just consist of the stations array
+
+        public List<string> stationsArr_ = new List<string>();
+
+    }
+
+    public sealed class Preferences
+    {
+        private static readonly Preferences instance = new Preferences();
+        
+        private PreferencesData data_ = new PreferencesData();
+
+        public Preferences() { 
+        }
+
+        public Preferences(string xmlData)
         {
-            List<string> stationsArr;
+            LoadFromString(xmlData);
+        }
+
+        public static Preferences Instance
+        {
+            get
+            {
+                return instance;
+            }
+        }
+
+
+        public List<string> GetStationsList()
+        {
+            return data_.stationsArr_;
+        }
+
+        public void AddStation(string newStation)
+        {
+            data_.stationsArr_.Add(newStation);
+        }
+
+        public string SaveToString()
+        {
+             XmlSerializer serializer = new XmlSerializer(typeof(PreferencesData));
+             StringWriter textWriter = new StringWriter();
+             serializer.Serialize(textWriter, data_);
+            
+            return textWriter.ToString();
+
+        }
+
+        public void LoadFromString(string loadFrom)
+        {
+            XmlSerializer deserializer = new XmlSerializer(typeof(PreferencesData));
+            StringReader textReader = new StringReader(loadFrom);
+            data_ = (PreferencesData)deserializer.Deserialize(textReader);
+        }
+
+        public void SaveToRegistry()
+        {
+            Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
+
+            roamingSettings.Values["StationsList"] = SaveToString();
+        }
+
+        public void LoadFromRegistry()
+        {
 
             Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
 
-            Object savedList = roamingSettings.Values["StationsList"];
-            if (savedList != null)
+            string savedXml = (string)roamingSettings.Values["StationsList"];
+            if (savedXml != null)
             {
-                stationsArr = (List<string>)savedList;
+                LoadFromString(savedXml);
             }
             else
             {
-                stationsArr = new List<string>();
+                data_.stationsArr_ = new List<string>();
 
                 string[] stationsTemp = new string[]{ "KBFI", 
                                     "KAWO", 
@@ -31,22 +96,11 @@ namespace MetarMan2
                                     "KIWA",
                                     "KHII",
                                     "KGEU","KBLI","KCLS","KHQM","KRNT","KSHN","KATX","KNOW", "KVUO", "KTIW", "KSFF"};
-                stationsArr.AddRange(stationsTemp);
+                data_.stationsArr_.AddRange(stationsTemp);
             }
 
-            return stationsArr;
+            //stationsArr_ = stationsArr;
         }
 
-        public static void AddStation(string newStation)
-        {
-            Windows.Storage.ApplicationDataContainer roamingSettings = Windows.Storage.ApplicationData.Current.RoamingSettings;
-
-            List<string> stations = Preferences.GetStationsList();
-
-            stations.Add(newStation);
-
-            roamingSettings.Values["StationsList"] = stations;
-    
-        }
     }
 }

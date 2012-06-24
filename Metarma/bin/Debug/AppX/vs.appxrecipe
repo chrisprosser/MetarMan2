@@ -5,7 +5,7 @@
     <WindowsUser>cpros_000</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>950B088EB3EEC6F33275A7C704A87F32855AD962898FBAFB81542C93B909FB83</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>F2025E8FF9D0ED1F75CC25FBC63C7F4DFC9B96685920AABE40D64E31DCEA47BC</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>07d81088-8744-4945-8079-49f0f8b2df1d_1.0.0.0_neutral__5hhv63dkc7hem</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>07d81088-8744-4945-8079-49f0f8b2df1d_5hhv63dkc7hem!App</RegisteredUserModeAppID>
     <RegisteredPackageID>07d81088-8744-4945-8079-49f0f8b2df1d</RegisteredPackageID>
@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-06-23T15:17:48.313</Modified>
+      <Modified>2012-06-24T11:57:56.932</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\Metarma.exe">
       <PackagePath>Metarma.exe</PackagePath>
-      <Modified>2012-06-23T15:17:44.725</Modified>
+      <Modified>2012-06-24T12:14:17.219</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\Metarma.pdb">
       <PackagePath>Metarma.pdb</PackagePath>
-      <Modified>2012-06-23T15:17:44.709</Modified>
+      <Modified>2012-06-24T12:14:17.202</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\Add.png">
       <PackagePath>Assets\Add.png</PackagePath>
@@ -78,7 +78,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-06-23T15:16:21.981</Modified>
+      <Modified>2012-06-24T11:57:56.804</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
