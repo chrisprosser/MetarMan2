@@ -1,7 +1,7 @@
-MetarMan2/bin/
+Metarma/bin/
 *.exe
 *.pdb
-MetarMan2/obj/
+Metarma/obj/
 TestResults/
 UnitTestLibrary1/bin/
 UnitTestLibrary1/obj/
