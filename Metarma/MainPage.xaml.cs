@@ -105,5 +105,10 @@ namespace MetarMan2
         {
             this.Frame.Navigate(typeof(AddStation));
 		}
+
+        private void DeleteButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+    
+        }
     }
 }

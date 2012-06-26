@@ -10,9 +10,14 @@
 	<Page.BottomAppBar>
 		<AppBar>
 			<StackPanel HorizontalAlignment="Left" Height="84" VerticalAlignment="Top" Width="1346" Orientation="Horizontal">
-				<Button x:Name="AddButton" Content="" VerticalAlignment="Center" Width="50" Height="50" HorizontalAlignment="Center" BorderThickness="0" Click="AddButton_Click">
+				<Button x:Name="AddButton" Content="" VerticalAlignment="Center" Width="54" Height="54" HorizontalAlignment="Center" BorderThickness="0" Click="AddButton_Click">
 					<Button.Background>
 						<ImageBrush ImageSource="Assets/Add.png" Stretch="None"/>
+					</Button.Background>
+				</Button>
+				<Button x:Name="DeleteButton" Content="" VerticalAlignment="Center" Width="54" Height="54" HorizontalAlignment="Center" BorderThickness="0" Click="DeleteButton_Click" Margin="0,17">
+					<Button.Background>
+						<ImageBrush ImageSource="Assets/Delete.png" Stretch="None"/>
 					</Button.Background>
 				</Button>
 			</StackPanel>
