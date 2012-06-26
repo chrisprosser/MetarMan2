@@ -8,7 +8,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Xml;
 
-namespace MetarMan2
+namespace Metarma
 {
     class NOAAMetarService
     {

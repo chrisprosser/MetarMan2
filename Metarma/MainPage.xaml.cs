@@ -16,7 +16,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace MetarMan2
+namespace Metarma
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -72,7 +72,7 @@ namespace MetarMan2
                 sp.Items.Add(tb);
             }
 
-
+            //sp.ItemsSource = 
 
             List<string> stations = new List<string>(stationsArr);
 

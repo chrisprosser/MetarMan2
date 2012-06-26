@@ -11,7 +11,7 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
-namespace MetarMan2.Common
+namespace Metarma.Common
 {
     /// <summary>
     /// Typical implementation of Page that provides several important conveniences:

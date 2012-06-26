@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MetarMan2
+namespace Metarma
 {
     interface MetarService
     {

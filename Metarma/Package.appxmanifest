@@ -2,7 +2,7 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
   <Identity Name="07d81088-8744-4945-8079-49f0f8b2df1d" Publisher="CN=cpros_000" Version="1.0.0.0" />
   <Properties>
-    <DisplayName>MetarMan2</DisplayName>
+    <DisplayName>Metarma</DisplayName>
     <PublisherDisplayName>Christopher Prosser at nart.org</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -14,7 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="MetarMan2.App">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="Metarma.App">
       <VisualElements DisplayName="Metarma" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="Read up those pesky METARs before your flight." ForegroundText="light" BackgroundColor="#464646">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />

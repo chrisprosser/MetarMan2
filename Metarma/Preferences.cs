@@ -7,7 +7,7 @@ using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace MetarMan2
+namespace Metarma
 {
     public sealed class PreferencesData
     {

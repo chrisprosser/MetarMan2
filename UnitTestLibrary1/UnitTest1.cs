@@ -5,7 +5,7 @@ using System.Text;
 using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 using System.Threading.Tasks;
 
-using MetarMan2;
+using Metarma;
 
 namespace UnitTestLibrary1
 {

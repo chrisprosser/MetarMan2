@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Markup;
 using Windows.UI.Xaml;
 using Metarma.Metarma_XamlTypeInfo;
 
-namespace MetarMan2
+namespace Metarma
 {
     public partial class App : IXamlMetadataProvider
     {
@@ -116,13 +116,13 @@ namespace Metarma.Metarma_XamlTypeInfo
             }
         }
 
-        private object Activate_0_LayoutAwarePage() { return new MetarMan2.Common.LayoutAwarePage(); }
+        private object Activate_0_LayoutAwarePage() { return new Metarma.Common.LayoutAwarePage(); }
 
-        private object Activate_1_AddStation() { return new MetarMan2.AddStation(); }
+        private object Activate_1_AddStation() { return new Metarma.AddStation(); }
 
-        private object Activate_2_MainPage() { return new MetarMan2.MainPage(); }
+        private object Activate_2_MainPage() { return new Metarma.MainPage(); }
 
-        private object Activate_3_MetarControl() { return new MetarMan2.MetarControl(); }
+        private object Activate_3_MetarControl() { return new Metarma.MetarControl(); }
 
 
         private IXamlType CreateXamlType(string typeName)
@@ -140,26 +140,26 @@ namespace Metarma.Metarma_XamlTypeInfo
                 xamlType = new XamlSystemBaseType(typeName, typeof(Windows.UI.Xaml.Controls.UserControl));
                 break;
 
-            case "MetarMan2.Common.LayoutAwarePage":
-                userType = new XamlUserType(this, typeName, typeof(MetarMan2.Common.LayoutAwarePage), GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+            case "Metarma.Common.LayoutAwarePage":
+                userType = new XamlUserType(this, typeName, typeof(Metarma.Common.LayoutAwarePage), GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_LayoutAwarePage;
                 xamlType = userType;
                 break;
 
-            case "MetarMan2.AddStation":
-                userType = new XamlUserType(this, typeName, typeof(MetarMan2.AddStation), GetXamlTypeByName("MetarMan2.Common.LayoutAwarePage"));
+            case "Metarma.AddStation":
+                userType = new XamlUserType(this, typeName, typeof(Metarma.AddStation), GetXamlTypeByName("Metarma.Common.LayoutAwarePage"));
                 userType.Activator = Activate_1_AddStation;
                 xamlType = userType;
                 break;
 
-            case "MetarMan2.MainPage":
-                userType = new XamlUserType(this, typeName, typeof(MetarMan2.MainPage), GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+            case "Metarma.MainPage":
+                userType = new XamlUserType(this, typeName, typeof(Metarma.MainPage), GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_2_MainPage;
                 xamlType = userType;
                 break;
 
-            case "MetarMan2.MetarControl":
-                userType = new XamlUserType(this, typeName, typeof(MetarMan2.MetarControl), GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+            case "Metarma.MetarControl":
+                userType = new XamlUserType(this, typeName, typeof(Metarma.MetarControl), GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
                 userType.Activator = Activate_3_MetarControl;
                 xamlType = userType;
                 break;
