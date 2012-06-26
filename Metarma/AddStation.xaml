@@ -14,7 +14,7 @@
     <Page.Resources>
 
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
+        <x:String x:Key="AppName">Metarma</x:String>
     </Page.Resources>
 
     <!--
@@ -22,52 +22,38 @@
         * Row 0 contains the back button and page title
         * Row 1 contains the rest of the page layout
     -->
-    <Grid Style="{StaticResource LayoutRootStyle}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="140"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+	    <Grid
+        x:Name="RootPanel"
+        Opacity=".75"
+        HorizontalAlignment="Stretch"
+        VerticalAlignment="Stretch">
+		<Grid Style="{StaticResource LayoutRootStyle}" Margin="2,169.243,2,216.757" Background="#FF424141">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="140"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
 
-        <!-- Back button and page title -->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" Style="{StaticResource PageHeaderTextStyle}"/>
-        </Grid>
-        <TextBox x:Name="StationIDText" HorizontalAlignment="Left" Margin="160,127,0,0" Grid.Row="1" TextWrapping="Wrap" Text="KBFI" VerticalAlignment="Top" Width="100" FontSize="26.667"/>
-        <Button Content="Add Station" HorizontalAlignment="Left" Margin="224,235,0,0" Grid.Row="1" VerticalAlignment="Top" Click="OnAddStationButton"/>
+			<VisualStateManager.VisualStateGroups>
 
-        <VisualStateManager.VisualStateGroups>
+	    			<!-- Visual states reflect the application's view state -->
+				<VisualStateGroup x:Name="ApplicationViewStates">
+					<VisualState x:Name="FullScreenLandscape"/>
+					<VisualState x:Name="Filled"/>
 
-            <!-- Visual states reflect the application's view state -->
-            <VisualStateGroup x:Name="ApplicationViewStates">
-                <VisualState x:Name="FullScreenLandscape"/>
-                <VisualState x:Name="Filled"/>
+	    				<!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
+					<VisualState x:Name="FullScreenPortrait"/>
 
-                <!-- The entire page respects the narrower 100-pixel margin convention for portrait -->
-                <VisualState x:Name="FullScreenPortrait">
-                    <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource PortraitBackButtonStyle}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
-                </VisualState>
+	    				<!-- The back button and title have different styles when snapped -->
+					<VisualState x:Name="Snapped"/>
+				</VisualStateGroup>
+			</VisualStateManager.VisualStateGroups>
 
-                <!-- The back button and title have different styles when snapped -->
-                <VisualState x:Name="Snapped">
-                    <Storyboard>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="backButton" Storyboard.TargetProperty="Style">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedBackButtonStyle}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="pageTitle" Storyboard.TargetProperty="Style">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="{StaticResource SnappedPageHeaderTextStyle}"/>
-                        </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
-                </VisualState>
-            </VisualStateGroup>
-        </VisualStateManager.VisualStateGroups>
+	    		<!-- Back button and page title -->
+			<TextBox x:Name="StationIDText" HorizontalAlignment="Left" Margin="124.346,0,0,0" Grid.Row="1" TextWrapping="Wrap" Text="KBFI" VerticalAlignment="Top" Width="113" FontSize="26.667"/>
+			<Button Content="Add Station" HorizontalAlignment="Left" Margin="124.346,66.756,0,0" Grid.Row="1" VerticalAlignment="Top" Click="OnAddStationButton"/>
+			<Button Content="Cancel" HorizontalAlignment="Left" Margin="296.374,66.756,0,0" Grid.Row="1" VerticalAlignment="Top" Click="OnCancelButton"/>
+
+		</Grid>
     </Grid>
+
 </common:LayoutAwarePage>

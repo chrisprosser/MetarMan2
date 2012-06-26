@@ -57,13 +57,6 @@ namespace MetarMan2
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
 
-            //Windows.UI.ApplicationSettings.SettingsPane.Show();
-            /*
-            TextBlock currentTime = (TextBlock) FindName("CurrentDateTime");
-            DateTime dt = DateTime.UtcNow;
-            string value = "UTC Now: " + dt.ToString("ddHHmm") + "Z";
-            currentTime.SetValue(TextBlock.TextProperty, value);
-            */
             NOAAMetarService service = new NOAAMetarService();
             //StackPanel sp = (StackPanel)FindName("MainStack");
             GridView sp = (GridView)FindName("MainGrid");
@@ -89,31 +82,6 @@ namespace MetarMan2
 
             // Use ToArray to execute the query and start the download tasks.
             Task<int>[] downloadTasks = downloadTasksQuery.ToArray();
-
- 
-            /*
-            foreach( string station in stations) {
-
-                tb.SetValue(TextBox.IsReadOnlyProperty, true);
-                tb.SetValue(TextBox.AcceptsReturnProperty, true);
-                tb.SetValue(TextBox.WidthProperty, Double.NaN);
-                tb.SetValue(TextBox.TextProperty, station + " Loading...");
-
-                Task<Metar> m = service.GetCurrentObsAsync(station);
-
-                //m.Wait();
-
-                if (m.Result.IsBad())
-                {
-                    tb.SetValue(TextBox.TextProperty, station + " is bad");
-                }
-                else
-                {
-                    tb.SetValue(TextBox.TextProperty, m.Result.GetRawMetar());
-                }
-            
-            }
-             * */
         }
 
         async Task<int> ProcessStation(string station)
@@ -136,8 +104,6 @@ namespace MetarMan2
         private void AddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddStation));
-        	// TODO: Add event handler implementation here.
-        	// put up a dialog? to ask for the 4 character code.
 		}
     }
 }

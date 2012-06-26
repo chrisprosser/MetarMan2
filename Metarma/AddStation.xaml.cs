@@ -24,6 +24,8 @@ namespace MetarMan2
         public AddStation()
         {
             this.InitializeComponent();
+
+            ListView lv = (ListView) FindName("stationList");
         }
 
        /// <summary>
@@ -54,7 +56,12 @@ namespace MetarMan2
             TextBox tb = (TextBox)this.FindName("StationIDText");
             Preferences.Instance.AddStation( (string)tb.GetValue(TextBox.TextProperty));
             Preferences.Instance.SaveToRegistry();
-        	// TODO: Add event handler implementation here.
+            Frame.GoBack();
+        }
+
+        private void OnCancelButton(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        {
+        	Frame.GoBack();
         }
     }
 }

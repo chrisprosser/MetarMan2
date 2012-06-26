@@ -19,7 +19,7 @@
 		</AppBar>
 	</Page.BottomAppBar>
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Margin="0">
     	<GridView x:Name="MainGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto"/>
     </Grid>
 </Page>
