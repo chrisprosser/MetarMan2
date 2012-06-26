@@ -74,6 +74,8 @@ namespace Metarma
 
             //sp.ItemsSource = 
 
+            /*
+             * refactoring inside of station
             List<string> stations = new List<string>(stationsArr);
 
             // Create a query.
@@ -82,8 +84,11 @@ namespace Metarma
 
             // Use ToArray to execute the query and start the download tasks.
             Task<int>[] downloadTasks = downloadTasksQuery.ToArray();
+            */
         }
 
+        /*
+         * cprosser, basic logic moved into Station now.
         async Task<int> ProcessStation(string station)
         {
             NOAAMetarService service = new NOAAMetarService();
@@ -100,7 +105,7 @@ namespace Metarma
             return 0; // can't figure out Task<void> for now
 
         }
-
+        */
         private void AddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddStation));

@@ -118,6 +118,10 @@
     <Compile Include="..\Metarma\Preferences.cs">
       <Link>Preferences.cs</Link>
     </Compile>
+    <Compile Include="..\Metarma\Station.cs">
+      <Link>Station.cs</Link>
+    </Compile>
+    <Compile Include="StationTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

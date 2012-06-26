@@ -33,23 +33,6 @@ namespace UnitTestLibrary1
 
         }
 
-        [TestMethod]
-        public void TestBadMetar()
-        {
-            Metar metar = new Metar();
-
-            Assert.IsTrue(metar.IsBad());
-        }
-
-        [TestMethod]
-        public void TestBadStation()
-        {
-            Metar metar = new Metar();
-            metar.SetBadStation("KLLL");
-
-            Assert.AreEqual<string>("KLLL", metar.GetStation());
-            Assert.IsTrue(metar.IsBad());
-        }
 
         [TestMethod]
         public void TestGetMetarOnly()
@@ -113,7 +96,7 @@ namespace UnitTestLibrary1
 
             Task<Metar> theMetar = noaa.GetCurrentObsAsync("KAWO");
 
-            Assert.IsTrue(!theMetar.Result.IsBad());
+            Assert.IsTrue(theMetar.Result != null);
         }
 
 
@@ -124,8 +107,8 @@ namespace UnitTestLibrary1
 
             Task<Metar> theMetar = noaa.GetCurrentObsAsync("XXXX");
 
-            Assert.IsTrue( theMetar.Result.IsBad());
-            Assert.AreEqual<string>("XXXX", theMetar.Result.GetStation());
+            Assert.IsTrue(theMetar.Result == null);
+           
         }
 
         [TestMethod]

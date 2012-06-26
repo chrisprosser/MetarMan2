@@ -18,13 +18,14 @@ namespace Metarma
 {
     public sealed partial class MetarControl : UserControl
     {
-        private Metar metar_;
+        private Station station_;
 
         public MetarControl()
         {
             this.InitializeComponent();
         }
 
+        /*
         public void SetMetar(Metar inMetar)
         {
             metar_ = inMetar;
@@ -33,6 +34,8 @@ namespace Metarma
             tb.SetValue(TextBlock.TextProperty, metar_.GetStation());
 
             TextBlock metarControl = (TextBlock)FindName("Metar");
+            // TODO: cprosser - rewire this using the observer pattern correctly
+            // This will observer Station
             if (!metar_.IsBad())
             {
                 metarControl.SetValue(TextBlock.TextProperty, metar_.GetMetarOnly());
@@ -40,6 +43,7 @@ namespace Metarma
                 metarControl.SetValue(TextBlock.VisibilityProperty, Visibility.Visible);
             }
         }
+         * */
 
     }
 }

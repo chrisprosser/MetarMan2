@@ -12,25 +12,13 @@ namespace Metarma
     {
         public Metar()
         {
-            bad_ = true;
         }
 
         public Metar(string rawMetar)
         { 
             metar_ = rawMetar;
-            bad_ = false;
         }
 
-        public void SetBadStation(string station)
-        {
-            metar_ = "METAR " + station;
-            bad_ = true;
-        }
-
-        public bool IsBad()
-        {
-            return bad_;
-        }
 
         public static string StripString(string inputStr)
         {
@@ -59,8 +47,8 @@ namespace Metarma
             return splitString[1];
         }
 
+
         private string metar_;
-        private bool bad_;
     
     }
 }
