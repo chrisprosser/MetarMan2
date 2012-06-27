@@ -25,7 +25,22 @@
 	</Page.BottomAppBar>
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}" Margin="0">
-    	<GridView x:Name="MainGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto"/>
+    	<GridView x:Name="MainGrid" HorizontalAlignment="Left" VerticalAlignment="Top" Width="Auto">
+<GridView.ItemTemplate>
+           <DataTemplate>
+            <Grid>
+<Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="197*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+
+                        
+<TextBlock x:Name="Metar" HorizontalAlignment="Left" Margin="127,0,0,10" TextWrapping="Wrap" Text="{Binding Path=LocalMetar.EncodedDescription, Mode=OneWay}" Foreground="#FDAAA9A9" FontSize="16" Width="560" VerticalAlignment="Bottom" />
+<TextBlock x:Name="StationName" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Height="64" FontSize="58.667" Foreground="#79099548" Text="{Binding Path=StationID, Mode=OneWay}"/>
+            </Grid>
+        </DataTemplate>
+</GridView.ItemTemplate>
+        </GridView>
     </Grid>
 </Page>
 

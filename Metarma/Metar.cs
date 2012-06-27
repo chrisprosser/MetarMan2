@@ -10,13 +10,17 @@ namespace Metarma
 {
     public class Metar
     {
+        public string EncodedDescription { get; set; }
+
         public Metar()
         {
+            EncodedDescription = "";
         }
 
         public Metar(string rawMetar)
         { 
             metar_ = rawMetar;
+            EncodedDescription = GetMetarOnly();
         }
 
 

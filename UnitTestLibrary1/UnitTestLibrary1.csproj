@@ -121,6 +121,8 @@
     <Compile Include="..\Metarma\Station.cs">
       <Link>Station.cs</Link>
     </Compile>
+    <Compile Include="Stations.cs" />
+    <Compile Include="StationsTest.cs" />
     <Compile Include="StationTest.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,7 +5,7 @@
     <WindowsUser>cpros_000</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>F2025E8FF9D0ED1F75CC25FBC63C7F4DFC9B96685920AABE40D64E31DCEA47BC</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>FF34DE92E4324E936D768F2F1FB659E3FB02A4581C941C31C1BDAE0C3E0D1FFA</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>07d81088-8744-4945-8079-49f0f8b2df1d_1.0.0.0_neutral__5hhv63dkc7hem</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>07d81088-8744-4945-8079-49f0f8b2df1d_5hhv63dkc7hem!App</RegisteredUserModeAppID>
     <RegisteredPackageID>07d81088-8744-4945-8079-49f0f8b2df1d</RegisteredPackageID>
@@ -16,21 +16,25 @@
     <AppXManifest Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-06-25T17:08:26.654</Modified>
+      <Modified>2012-06-26T20:18:55.429</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\Metarma.exe">
       <PackagePath>Metarma.exe</PackagePath>
-      <Modified>2012-06-25T21:31:05.071</Modified>
+      <Modified>2012-06-26T20:22:01.025</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\Metarma.pdb">
       <PackagePath>Metarma.pdb</PackagePath>
-      <Modified>2012-06-25T21:31:05.053</Modified>
+      <Modified>2012-06-26T20:22:00.982</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\Add.png">
       <PackagePath>Assets\Add.png</PackagePath>
       <Modified>2012-06-03T21:05:20.538</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\Delete.png">
+      <PackagePath>Assets\Delete.png</PackagePath>
+      <Modified>2012-06-25T21:37:33.098</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -58,7 +62,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\AddStation.xaml">
       <PackagePath>AddStation.xaml</PackagePath>
-      <Modified>2012-06-25T21:30:57.082</Modified>
+      <Modified>2012-06-26T14:45:05.754</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
@@ -66,19 +70,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\MainPage.xaml">
       <PackagePath>MainPage.xaml</PackagePath>
-      <Modified>2012-06-25T17:15:23.273</Modified>
+      <Modified>2012-06-26T19:13:42.259</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\MetarControl.xaml">
       <PackagePath>MetarControl.xaml</PackagePath>
-      <Modified>2012-06-03T19:54:59.554</Modified>
+      <Modified>2012-06-26T14:45:05.286</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
-      <Modified>2012-06-25T17:18:43.821</Modified>
+      <Modified>2012-06-26T14:45:06.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\cpros_000\Documents\Visual Studio 2012\Projects\Metarma\Metarma\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-06-25T17:08:26.583</Modified>
+      <Modified>2012-06-26T16:17:21.196</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

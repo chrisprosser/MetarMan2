@@ -10,7 +10,7 @@ using Metarma;
 namespace UnitTestLibrary1
 {
     [TestClass]
-    class StationTest
+    public class StationTest
     {
         [TestMethod]
         public void BasicIDTest()
@@ -26,6 +26,16 @@ namespace UnitTestLibrary1
             Station s = new Station("KAWO");
 
             Assert.IsTrue(s.IsBad());
+        }
+
+        [TestMethod]
+        public void AsyncMetarGet()
+        {
+            Station s = new Station("KAWO");
+            Task t = s.GetCurrentObsAsyncWorker();
+            t.Wait();
+
+            Assert.IsNotNull(s.LocalMetar);
         }
     }
 }

@@ -64,6 +64,16 @@ namespace Metarma
             // Place the frame in the current Window and ensure that it is active
             Window.Current.Content = rootFrame;
             Window.Current.Activate();
+
+
+            Preferences.Instance.LoadFromRegistry();
+
+            List<string> stationsArr = Preferences.Instance.GetStationsList();
+
+            foreach (string station in stationsArr)
+            {
+                Stations.Instance.AddStation(station);
+            }
         }
 
         /// <summary>

@@ -24,8 +24,6 @@ namespace Metarma
     public sealed partial class MainPage : Page
     {
 
- 
-
         void InitHandlers()
         {
             //Windows.Storage.ApplicationData.Current.DataChanged +=
@@ -46,6 +44,8 @@ namespace Metarma
             var settingspane = Windows.UI.ApplicationSettings.SettingsPane.GetForCurrentView();
 
             //settingspane.CommandsRequested += settingspane_CommandsRequested;
+            GridView sp = (GridView)FindName("MainGrid");
+            sp.ItemsSource = Stations.Instance.StationsList;
 
         }
 
@@ -56,23 +56,7 @@ namespace Metarma
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-
-            NOAAMetarService service = new NOAAMetarService();
-            //StackPanel sp = (StackPanel)FindName("MainStack");
-            GridView sp = (GridView)FindName("MainGrid");
-            Preferences.Instance.LoadFromRegistry();
-
-            List<string> stationsArr = Preferences.Instance.GetStationsList();
-
-            foreach (string station in stationsArr)
-            {
-
-                MetarControl tb = new MetarControl();
-                tb.SetValue(TextBox.NameProperty, station);
-                sp.Items.Add(tb);
-            }
-
-            //sp.ItemsSource = 
+ 
 
             /*
              * refactoring inside of station
@@ -113,7 +97,14 @@ namespace Metarma
 
         private void DeleteButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-    
+            GridView sp = (GridView)FindName("MainGrid");
+            if (sp.SelectedIndex != -1)
+            {
+                // delete the one at the index
+                Preferences.Instance.GetStationsList().RemoveAt(sp.SelectedIndex);
+                Stations.Instance.StationsList.RemoveAt(sp.SelectedIndex);
+                Preferences.Instance.SaveToRegistry();
+            }
         }
     }
 }

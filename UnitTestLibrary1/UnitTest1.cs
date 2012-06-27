@@ -23,6 +23,15 @@ namespace UnitTestLibrary1
         }
 
         [TestMethod]
+        public void EnptyCtorTest()
+        {
+            Metar metar = new Metar();
+
+            Assert.AreEqual<string>("", metar.EncodedDescription);
+        }
+
+
+        [TestMethod]
         public void GetKBFIStationTest()
         {
             string testRawMetar = "METAR KBFI 021953Z 19009KT 10SM SCT047 SCT060 OVC075 17/09 A2992 RMK AO2 SLP133 T01670089";

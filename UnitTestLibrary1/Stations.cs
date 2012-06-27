@@ -35,11 +35,7 @@ namespace Metarma
             Station st = new Station(newStation);
             StationsList.Add(st);
             // only update after attaching the UI so it knows to redraw
-            Task t = System.Threading.Tasks.Task.Run(async () =>  await st.GetCurrentObsAsyncWorker() );
-            t.Wait();
-
-            //Task ignoreTheWarningIWantToRunFree = st.GetCurrentObsAsyncWorker();
-            //ignoreTheWarningIWantToRunFree.Wait();
+            Task ignoreTheWarning = st.GetCurrentObsAsyncWorker();
         }
     }
 }

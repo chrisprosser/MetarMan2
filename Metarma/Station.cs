@@ -8,12 +8,14 @@ namespace Metarma
 {
     class Station
     {
-        public string StationID;
-        public Metar LocalMetar;
+        public string StationID { get; set; }
+        public Metar LocalMetar { get; set; }
 
         public Station(string stationID)
         {
             StationID = stationID;
+            LocalMetar = new Metar(); // start with an empty one?
+
             bad_ = true;
         }
 
@@ -27,20 +29,22 @@ namespace Metarma
             return bad_;
         }
 
-        public Task GetCurrentObsAsync()
+       /* public Task GetCurrentObsAsync()
         {
-            Task t = new Task(GetCurrentObsAsyncWorker);
-
-            return t;
+           // Task t = new Task(GetCurrentObsAsyncWorker);
+          //  t.Start();
+          //  return t;
         }
-
-        public async void GetCurrentObsAsyncWorker()
+        */
+        public async Task GetCurrentObsAsyncWorker()
         {
             NOAAMetarService service = new NOAAMetarService();
 
             Metar m = await service.GetCurrentObsAsync(StationID);
-
-            LocalMetar = m;
+            if (m != null)
+            {
+                LocalMetar.EncodedDescription = m.EncodedDescription;
+            }
         }
 
         

@@ -54,7 +54,10 @@ namespace Metarma
         private void OnAddStationButton(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             TextBox tb = (TextBox)this.FindName("StationIDText");
-            Preferences.Instance.AddStation( (string)tb.GetValue(TextBox.TextProperty));
+            // todo: refactor this
+            string station = (string)tb.GetValue(TextBox.TextProperty);
+            Stations.Instance.AddStation(station);
+            Preferences.Instance.AddStation( station );
             Preferences.Instance.SaveToRegistry();
             Frame.GoBack();
         }
