@@ -34,10 +34,13 @@ namespace Metarma
             // create a new metar and fire off the asynchronous read.
             Station st = new Station(newStation);
             StationsList.Add(st);
-            // only update after attaching the UI so it knows to redraw
-            Task t = System.Threading.Tasks.Task.Run(async () =>  await st.GetCurrentObsAsyncWorker() );
-            t.Wait();
 
+            if (false)
+            {
+                // only update after attaching the UI so it knows to redraw
+                Task t = System.Threading.Tasks.Task.Run(async () => await st.GetCurrentObsAsyncWorker());
+                t.Wait();
+            }
             //Task ignoreTheWarningIWantToRunFree = st.GetCurrentObsAsyncWorker();
             //ignoreTheWarningIWantToRunFree.Wait();
         }

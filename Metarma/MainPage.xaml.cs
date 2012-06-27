@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Threading;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -56,7 +57,25 @@ namespace Metarma
         /// property is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
- 
+            var context = TaskScheduler.FromCurrentSynchronizationContext();
+
+            foreach (var item in Stations.Instance.StationsList)
+            {
+                //Task t = System.Threading.Tasks.Task.Run(async () => await item.GetCurrentObsAsyncWorker());
+
+                Task t = System.Threading.Tasks.Task.Run(() =>
+                    {
+                        Task.Delay(1000);
+                        
+                        //item.LocalMetar.EncodedDescription = "Youber";
+                    });
+                t.ContinueWith(_ => 
+                    {
+                        item.LocalMetar.EncodedDescription = "Youber";
+                    }, context);
+                //t.Wait();
+                //item.LocalMetar.EncodedDescription = "Youber";
+            }
 
             /*
              * refactoring inside of station
