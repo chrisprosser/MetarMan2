@@ -55,61 +55,13 @@ namespace Metarma
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.  The Parameter
         /// property is typically used to configure the page.</param>
-        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            var context = TaskScheduler.FromCurrentSynchronizationContext();
-
-            foreach (var item in Stations.Instance.StationsList)
-            {
-                //await item.GetCurrentObsAsyncWorker();
-                /*
-                Task t = System.Threading.Tasks.Task.Run(() =>
-                    {
-                        Task.Delay(1000);
-                        
-                        //item.LocalMetar.EncodedDescription = "Youber";
-                    });
-                t.ContinueWith(_ => 
-                    {
-                        item.LocalMetar.EncodedDescription = "Youber";
-                    }, context);
-                //t.Wait();
-                //item.LocalMetar.EncodedDescription = "Youber";
-           */ 
-           }
-
-            /*
-             * refactoring inside of station
-            List<string> stations = new List<string>(stationsArr);
-
-            // Create a query.
-            IEnumerable<Task<int>> downloadTasksQuery =
-                from station in stations select ProcessStation(station);
-
-            // Use ToArray to execute the query and start the download tasks.
-            Task<int>[] downloadTasks = downloadTasksQuery.ToArray();
-            */
+ 
+   
         }
 
-        /*
-         * cprosser, basic logic moved into Station now.
-        async Task<int> ProcessStation(string station)
-        {
-            NOAAMetarService service = new NOAAMetarService();
-            GridView sp = (GridView)FindName("MainGrid");
-            MetarControl tb = (MetarControl)sp.FindName(station);
-
-
-            Metar m = await service.GetCurrentObsAsync(station);
-
-            //m.Wait();
-            tb.SetMetar(m);
-
-
-            return 0; // can't figure out Task<void> for now
-
-        }
-        */
+ 
         private void AddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddStation));
