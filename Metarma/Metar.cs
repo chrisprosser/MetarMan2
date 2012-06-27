@@ -4,14 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
+using System.ComponentModel;
 
 //"METAR KBFI 021953Z 19009KT 10SM SCT047 SCT060 OVC075 17/09 A2992 RMK AO2 SLP133 T01670089";
 namespace Metarma
 {
-    public class Metar
+    public class Metar : INotifyPropertyChanged
     {
-        public string EncodedDescription { get; set; }
+        private string encodedDescription;
 
+        public string EncodedDescription { 
+            get{
+                return encodedDescription;
+            }
+            set
+            {
+                encodedDescription = value;
+                RaisePropertyChanged("EncodedDescription");
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void RaisePropertyChanged(string name)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(name));
+            }
+        }
         public Metar()
         {
             EncodedDescription = "";

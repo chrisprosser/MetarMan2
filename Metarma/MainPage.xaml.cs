@@ -55,14 +55,14 @@ namespace Metarma
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.  The Parameter
         /// property is typically used to configure the page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             var context = TaskScheduler.FromCurrentSynchronizationContext();
 
             foreach (var item in Stations.Instance.StationsList)
             {
-                //Task t = System.Threading.Tasks.Task.Run(async () => await item.GetCurrentObsAsyncWorker());
-
+                //await item.GetCurrentObsAsyncWorker();
+                /*
                 Task t = System.Threading.Tasks.Task.Run(() =>
                     {
                         Task.Delay(1000);
@@ -75,7 +75,8 @@ namespace Metarma
                     }, context);
                 //t.Wait();
                 //item.LocalMetar.EncodedDescription = "Youber";
-            }
+           */ 
+           }
 
             /*
              * refactoring inside of station
@@ -124,6 +125,7 @@ namespace Metarma
                 Stations.Instance.StationsList.RemoveAt(sp.SelectedIndex);
                 Preferences.Instance.SaveToRegistry();
             }
+            this.BottomAppBar.IsOpen = false;
         }
     }
 }
